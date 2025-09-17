@@ -1,43 +1,118 @@
 
 
-# Team Direction Guide
+# Team Direction Guide on 
 
->  CurnectGate+: A comprehensive mobile and web-based gated community management system designed to streamline visitor access, facilitate communication, manage payments, and enhance security
+## React + TypeScript + Vite + Claude Code + Figma MCP Server + Visual Studio Code
+
+> This boilerplate provides a modern development environment for students learning React with TypeScript, featuring integration with Claude Code, Figma's Model Context Protocol (MCP) Server, and Visual Studio Code.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
 
-## `Tech Stack`
+## `Project Tech Stack & Learning Guide`
 
-**Framework:** React Typescript
+> This project is built with a modern, industry-standard tech stack designed to provide a comprehensive and efficient development experience. Here’s a breakdown of the tools and how they work together:
+
+**React:** A powerful JavaScript library for building dynamic and interactive user interfaces with reusable components.
+
+**TypeScript:** A superset of JavaScript that adds static type definitions. It helps catch errors during development, makes the code more self-documenting, and provides a better developer experience through superior editor support.
+
+**Vite:** A next-generation build tool and development server. It offers incredibly fast startup and hot-module replacement (HMR), making the development process smooth and responsive.
+
+**Claude Code & Figma MCP Server:** This setup integrates AI directly into the development workflow. The Figma Model Context Protocol (MCP) server allows Claude (an AI assistant) to read your Figma design files. This means you can ask Claude questions about your designs, generate code based on components, and get style information without leaving your editor.
+
+**Visual Studio Code:** A highly popular and customizable code editor with excellent support for React, TypeScript, and extensions that enhance productivity.
+
+
+## Why This Stack?
+> This combination provides a robust foundation for learning: **Vite** offers speed and simplicity, **React + TypeScript** ensures scalable and reliable code, and the **Claude + Figma** integration introduces you to the cutting edge of AI-assisted development, bridging the gap between design and implementation.
+
+
+# Project Structure
+
+```bash
+  src/
+  ├── components/     # Reusable UI components
+  ├── pages/         # Route components
+  ├── hooks/         # Custom React hooks
+  ├── utils/         # Helper functions
+  ├── types/         # TypeScript type definitions
+  ├── assets/        # Images, styles, and other static files
+  └── router/        # Application routing configuration
+```
 
 ## Clone Project
 
 Clone the project to your local machine
 
 ```bash
-  git clone https://github.com/Boacon-Synergy-Inc/curnectGate-frontend.git
+  git clone https://github.com/bossoff/ReactJS-TypeScript-Boiler-Plate.git
 ```
 
-## Frontend Installation
+## Scaffold Installation
 
 ## Installation
 
 ```bash
-$ npm install
+  $ npm install
 ```
 
 ## Running the app
 
 ```bash
-# development
-$ npm run dev
+  # development
+  $ npm run dev
 
-# production mode
-$ npm run build
+  # production mode
+  $ npm run build
+```
+
+# If cannot find module @rollup/rollup-win32-x64-msvc error?
+
+> This is a common issue with npm's handling of optional dependencies, particularly with Rollup's native binaries. The error message actually provides the solution - here's how to fix it:
+
+```bash
+  # Force reinstall the specific Rollup package
+  $ npm install @rollup/rollup-win32-x64-msvc --save-optional
+
+  # Update Node.js and npm
+  $ npm install -g npm@latest
+
+```
+
+# Setting up Figma MCP Server with Claude Code
+
+## Install Claude Code on your machine 
+```bash
+  # Claude Code installed
+  $ npm install -g @anthropic-ai/claude-code
+
+```
+## Transport MCP
+
+```bash 
+
+  # Connect and transport claude wih MCP server
+  claude mcp add --transport sse figma-dev-mode-mcp-server http://127.0.0.1:3845/sse
+
+```
+
+## Verify MCP Server
+
+```bash 
+
+  # To verify is your MCP server is connected 
+  claude mcp list
+
+  > You should see figma-dev-mode-mcp-server in the list.
+
 ```
 
 ## Author
 
->  #Curnect Intelligence & Services Ltd.
+>  # [Bossoff](https://github.com/bossoff)
 
 
 ## License
@@ -70,77 +145,3 @@ $ npm run build
 
 
 
-
-
-
-
-
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
