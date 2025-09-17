@@ -1,3 +1,80 @@
+
+
+# Team Direction Guide
+
+>  CurnectGate+: A comprehensive mobile and web-based gated community management system designed to streamline visitor access, facilitate communication, manage payments, and enhance security
+
+
+## `Tech Stack`
+
+**Framework:** React Typescript
+
+## Clone Project
+
+Clone the project to your local machine
+
+```bash
+  git clone https://github.com/Boacon-Synergy-Inc/curnectGate-frontend.git
+```
+
+## Frontend Installation
+
+## Installation
+
+```bash
+$ npm install
+```
+
+## Running the app
+
+```bash
+# development
+$ npm run dev
+
+# production mode
+$ npm run build
+```
+
+## Author
+
+>  #Curnect Intelligence & Services Ltd.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
