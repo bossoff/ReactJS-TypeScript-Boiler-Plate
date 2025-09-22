@@ -28,8 +28,8 @@
 
 ## Simple: Perfect Prompt for Claude + Figma MCP I Used
 
-**Example:** ```Prompt
-Convert this Change temporary password in selected Sign Up with Authentication frame to responsive cross platform code https://www.figma.com/design/v4AUXxUEwR18jyODZ6dM1e/techLobby-Admin?node-id=20-894&m=dev Move all image files to respective assets folder and strickly follow my designs without any cold breaking.
+```Prompt
+**Example:**  Convert this Change temporary password in selected Sign Up with Authentication frame to responsive cross platform code https://www.figma.com/design/v4AUXxUEwR18jyODZ6dM1e/techLobby-Admin?node-id=20-894&m=dev Move all image files to respective assets folder and strickly follow my designs without any cold breaking.
 ```
 
 # Project Structure
