@@ -6,10 +6,6 @@
 
 > This boilerplate provides a modern development environment for students learning React with TypeScript, featuring integration with Claude Code, Figma's Model Context Protocol (MCP) Server, and Visual Studio Code.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
 
 ## `Project Tech Stack & Learning Guide`
 
@@ -29,6 +25,12 @@ If you are developing a production application, we recommend updating the config
 ## Why This Stack?
 > This combination provides a robust foundation for learning: **Vite** offers speed and simplicity, **React + TypeScript** ensures scalable and reliable code, and the **Claude + Figma** integration introduces you to the cutting edge of AI-assisted development, bridging the gap between design and implementation.
 
+
+## Simple: Perfect Prompt for Claude + Figma MCP I Used
+
+**Example:** ```Prompt
+Convert this Change temporary password in selected Sign Up with Authentication frame to responsive cross platform code https://www.figma.com/design/v4AUXxUEwR18jyODZ6dM1e/techLobby-Admin?node-id=20-894&m=dev Move all image files to respective assets folder and strickly follow my designs without any cold breaking.
+```
 
 # Project Structure
 
@@ -63,9 +65,11 @@ Clone the project to your local machine
 
 ```bash
   # development
+
   $ npm run dev
 
   # production mode
+
   $ npm run build
 ```
 
@@ -75,9 +79,11 @@ Clone the project to your local machine
 
 ```bash
   # Force reinstall the specific Rollup package
+
   $ npm install @rollup/rollup-win32-x64-msvc --save-optional
 
   # Update Node.js and npm
+
   $ npm install -g npm@latest
 
 ```
@@ -87,6 +93,7 @@ Clone the project to your local machine
 ## Install Claude Code on your machine 
 ```bash
   # Claude Code installed
+
   $ npm install -g @anthropic-ai/claude-code
 
 ```
@@ -95,7 +102,8 @@ Clone the project to your local machine
 ```bash 
 
   # Connect and transport claude wih MCP server
-  claude mcp add --transport sse figma-dev-mode-mcp-server http://127.0.0.1:3845/sse
+  
+  $ claude mcp add --transport sse figma-dev-mode-mcp-server http://127.0.0.1:3845/sse
 
 ```
 
@@ -104,7 +112,8 @@ Clone the project to your local machine
 ```bash 
 
   # To verify is your MCP server is connected 
-  claude mcp list
+  
+  $ claude mcp list
 
   > You should see figma-dev-mode-mcp-server in the list.
 
